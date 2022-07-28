@@ -18,7 +18,10 @@ app.use(express.static("public"));
 // Run main function and catch error, run async function for mongoose
 main().catch(err => console.log(err));
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/todolistDB');
+  // For local server
+  // await mongoose.connect('mongodb://localhost:27017/todolistDB');
+  // For mongoDB atlas
+  await mongoose.connect('mongodb+srv://admin-kevin:toyotamr2@atlascluster.4jtuj3y.mongodb.net/todolistDB');
   // Create schema
   const itemsSchema = new mongoose.Schema({
     name: String
