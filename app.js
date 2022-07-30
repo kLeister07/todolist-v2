@@ -138,14 +138,17 @@ app.get("/about", function (req, res) {
 });
 
 // Heroku port
-let port = process.env.PORT;
-if (port == null || port == ""){
-  port = 3000;
-};
-
-app.listen(port, function () {
-  console.log("Server has started successfully!");
-});
+let port = process.env.PORT || 3000
+app.listen(port, ()=>{
+console.log("server running on " + port)})
+// Kept for record during touble shooting
+// let port = process.env.PORT;
+// if (port == null || port == ""){
+//   port = 3000;
+// };
+// app.listen(port, function () {
+//   console.log("Server has started successfully!");
+// });
 
 // Keep for record. During trouble shooting this wasa in package.json under "scripts" originaly
     // "test": "echo \"Error: no test specified\" && exit 1"
