@@ -142,8 +142,10 @@ let port = process.env.PORT;
 if (port == null || port == ""){
   port = 3000;
 };
-app.listen(port);
 
 app.listen(port, function () {
   console.log("Server has started successfully!");
 });
+
+// Keep for record. During trouble shooting this wasa in package.json under "scripts" originaly
+    // "test": "echo \"Error: no test specified\" && exit 1"
